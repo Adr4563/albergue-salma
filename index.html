@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="frontend/js/app.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* devanagari */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-1.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-1.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-1.woff2") format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-2.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-3.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-5.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-6.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-7.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-8.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("frontend/fonts/baloo2-9.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#FFFAF8;color:#15161A;font-family:'Nunito',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#C41208;text-decoration:none}
+a:hover{color:#F51A0A}
+img{display:block;max-width:100%}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+
+<div style="min-height:100vh;display:flex;flex-direction:column">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,250,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid #F3E4DF">
+  <div style="max-width:1200px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#inicio" style="display:flex;align-items:center;gap:10px;color:#15161A">
+      <img src="fotos/logo-salma.png" alt="Logo Albergue Salma" style="width:46px;height:46px;border-radius:12px">
+      <span style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;line-height:1">Albergue <span style="color:#F51A0A">Salma</span></span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:4px">
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="6">
+          <sc-if value="{{ item.active }}">
+            <a href="{{ item.href }}" style="padding:8px 12px;border-radius:999px;font-weight:800;font-size:15px;color:#F51A0A;background:#FDE8E4;white-space:nowrap">{{ item.label }}</a>
+          </sc-if>
+          <sc-if value="{{ item.inactive }}">
+            <a href="{{ item.href }}" style="padding:8px 12px;border-radius:999px;font-weight:700;font-size:15px;color:#15161A;white-space:nowrap" style-hover="color:#F51A0A">{{ item.label }}</a>
+          </sc-if>
+        </sc-for>
+        <a href="{{ wa.general }}" target="_blank" rel="noopener" style="margin-left:8px;background:#F51A0A;color:#fff;padding:10px 18px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 4px 0 #A60F05;white-space:nowrap" style-hover="color:#fff;background:#D91507">Sé voluntario</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ isMobile }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="{{ wa.general }}" target="_blank" rel="noopener" style="background:#F51A0A;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;font-size:14px;min-height:44px;display:flex;align-items:center">Sé voluntario</a>
+        <button sc-camel-on-click="{{ toggleMenu }}" aria-label="Abrir menú" style="width:44px;height:44px;border-radius:12px;border:2px solid #15161A;background:transparent;font-size:20px;font-weight:800;cursor:pointer;color:#15161A">{{ menuIcon }}</button>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ showMobileMenu }}">
+    <nav style="display:flex;flex-direction:column;padding:8px 20px 20px;gap:4px;border-top:1px solid #F3E4DF">
+      <sc-for list="{{ nav }}" as="item">
+        <a href="{{ item.href }}" sc-camel-on-click="{{ closeMenu }}" style="padding:12px 4px;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:22px;color:#15161A;border-bottom:1px dashed #EBD6D0">{{ item.label }}</a>
+      </sc-for>
+    </nav>
+  </sc-if>
+</header>
+
+<main style="flex:1">
+
+<!-- ============ 1. INICIO ============ -->
+<sc-if value="{{ isInicio }}" hint-placeholder-val="{{ true }}">
+<div data-screen-label="01 Inicio">
+  <section style="position:relative;overflow:hidden;padding:48px 20px 64px">
+    <img src="frontend/icons/decorativo-top.svg" alt="" style="position:absolute;width:120px;right:-30px;top:20px;opacity:.08;transform:rotate(20deg)">
+    <img src="frontend/icons/decorativo-hero-2.svg" alt="" style="position:absolute;width:110px;left:-30px;bottom:30px;opacity:.08;transform:rotate(-25deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:center">
+      <div>
+        <p style="display:inline-flex;align-items:center;gap:8px;background:#15161A;color:#8EFF19;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:20px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Asociación Civil SALMA · Surquillo, Lima</p>
+        <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(40px,6.4vw,76px);line-height:.98;letter-spacing:-.01em;text-wrap:balance">Deja tu huella <span style="color:#F51A0A">donde más se necesita.</span></h1>
+        <p style="font-size:clamp(17px,2vw,20px);color:#4A4B52;margin:22px 0 30px;max-width:520px;text-wrap:pretty">Hace más de 20 años rescatamos y cuidamos perros y gatos abandonados en Lima. Hoy necesitamos manos voluntarias: unas horas tuyas cambian su día.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#ayuda" style="background:#F51A0A;color:#fff;padding:16px 28px;border-radius:999px;font-weight:800;font-size:17px;box-shadow:0 5px 0 #A60F05;min-height:52px;display:flex;align-items:center" style-hover="color:#fff;transform:translateY(-2px)">Quiero ayudar</a>
+          <a href="#dona" style="background:transparent;color:#15161A;border:2.5px solid #15161A;padding:14px 26px;border-radius:999px;font-weight:800;font-size:17px;min-height:52px;display:flex;align-items:center" style-hover="background:#15161A;color:#8EFF19">Quiero donar</a>
+        </div>
+      </div>
+      <div style="position:relative">
+        <div style="position:absolute;inset:18px -14px -14px 18px;background:#F51A0A;border-radius:32px"></div>
+        <img src="fotos/campana-salud-salma.png" alt="Voluntaria de SALMA atendiendo a un perrito" style="position:relative;width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:35% center;border-radius:32px;background:#F3E4DF">
+        <div style="position:absolute;left:-10px;bottom:24px;background:#15161A;color:#fff;padding:12px 20px;border-radius:18px;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.25)">
+          <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:24px;line-height:1">tu ayuda <span style="color:#8EFF19;font-style:italic">¡suma!</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F51A0A;color:#fff;padding:40px 20px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:90px;right:4%;top:-20px;opacity:.25;transform:rotate(15deg)">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;text-align:center">
+      <div><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1">+20</p><p style="font-weight:700;font-size:16px">años de labor</p></div>
+      <div><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1">3</p><p style="font-weight:700;font-size:16px">albergues</p></div>
+      <div><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1">+100</p><p style="font-weight:700;font-size:16px">perros y gatos</p></div>
+      <div><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1">+30 mil</p><p style="font-weight:700;font-size:16px">mascotas atendidas</p></div>
+    </div>
+  </section>
+
+  <section style="padding:72px 20px">
+    <div style="max-width:1200px;margin:0 auto">
+      <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Elige tu camino</p>
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(32px,4.4vw,48px);line-height:1.05;margin-bottom:32px">¿Por dónde quieres empezar?</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px">
+        <a href="#conocenos" style="display:flex;flex-direction:column;background:#fff;border-radius:28px;overflow:hidden;color:#15161A;border:1px solid #F3E4DF;box-shadow:0 8px 24px rgba(21,22,26,.06)" style-hover="color:#15161A;transform:translateY(-4px)">
+          <img src="{{ photos.g3 }}" alt="Perritos del albergue" style="width:100%;aspect-ratio:16/10;object-fit:cover;background:#F3E4DF">
+          <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Conocer el albergue</h3>
+            <p style="color:#4A4B52;flex:1">Quiénes somos, nuestra historia y lo que hacemos cada día.</p>
+            <span style="font-weight:800;color:#C41208">Ir a Conócenos →</span>
+          </div>
+        </a>
+        <a href="#ayuda" style="display:flex;flex-direction:column;background:#15161A;border-radius:28px;overflow:hidden;color:#fff;box-shadow:0 8px 24px rgba(21,22,26,.15)" style-hover="color:#fff;transform:translateY(-4px)">
+          <img src="{{ photos.g2 }}" alt="Voluntarios en el albergue" style="width:100%;aspect-ratio:16/10;object-fit:cover;background:#2A2B30">
+          <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Ser voluntario</h3>
+            <p style="color:#D8D8DC;flex:1">4 formas de ayudar según tu tiempo, tu carrera y tus ganas.</p>
+            <span style="font-weight:800;color:#8EFF19">Ver cómo ayudar →</span>
+          </div>
+        </a>
+        <a href="#instituciones" style="display:flex;flex-direction:column;background:#fff;border-radius:28px;overflow:hidden;color:#15161A;border:1px solid #F3E4DF;box-shadow:0 8px 24px rgba(21,22,26,.06)" style-hover="color:#15161A;transform:translateY(-4px)">
+          <img src="{{ photos.g5 }}" alt="Campaña de salud" style="width:100%;aspect-ratio:16/10;object-fit:cover;background:#F3E4DF">
+          <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1">
+            <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Traer a mi institución</h3>
+            <p style="color:#4A4B52;flex:1">Universidades, colegios y empresas: visitas grupales y servicio social.</p>
+            <span style="font-weight:800;color:#C41208">Ver propuesta →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ============ 2. CONÓCENOS ============ -->
+<sc-if value="{{ isConocenos }}">
+<div data-screen-label="02 Conócenos">
+  <section style="background:#15161A;color:#fff;padding:56px 20px 60px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-footer.svg" alt="" style="position:absolute;width:120px;right:6%;top:24px;opacity:.3;transform:rotate(-20deg)">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:70px;right:18%;bottom:20px;opacity:.3;transform:rotate(12deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto">
+      <p style="color:#8EFF19;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Conócenos</p>
+      <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:28px">¿Qué es SALMA?</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;max-width:900px">
+        <div style="border:2px solid #34353B;border-radius:20px;padding:14px 16px"><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1;color:#F51A0A">S</p><p style="font-weight:700">Siempre</p></div>
+        <div style="border:2px solid #34353B;border-radius:20px;padding:14px 16px"><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1;color:#F51A0A">A</p><p style="font-weight:700">Animales</p></div>
+        <div style="border:2px solid #34353B;border-radius:20px;padding:14px 16px"><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1;color:#F51A0A">L</p><p style="font-weight:700">Libres de</p></div>
+        <div style="border:2px solid #34353B;border-radius:20px;padding:14px 16px"><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1;color:#F51A0A">M</p><p style="font-weight:700">Maltrato y</p></div>
+        <div style="border:2px solid #34353B;border-radius:20px;padding:14px 16px"><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:48px;line-height:1;color:#8EFF19">A</p><p style="font-weight:700">Abandono</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:72px 20px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:48px;align-items:center">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.05">Nuestra historia</h2>
+        <p style="font-size:18px;color:#3A3B42;text-wrap:pretty">Somos una asociación civil sin fines de lucro fundada por la <strong>Dra. Nelly Galarza Chávez</strong>, médica veterinaria. Empezamos recuperando animales de la calle en Surquillo y, con los años, nos convertimos en el hogar de cientos de perritos y gatitos que no tenían a dónde ir.</p>
+        <div style="background:#FDE8E4;border-radius:24px;padding:22px 24px;margin-top:6px">
+          <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Nuestra misión</p>
+          <p style="font-family:'Baloo 2',sans-serif;font-weight:700;font-size:22px;line-height:1.3">Rescatar, sanar y cuidar a los animales abandonados, y promover la tenencia responsable en las zonas más vulnerables de Lima.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:32px;padding:28px;border:1px solid #F3E4DF;box-shadow:0 10px 30px rgba(21,22,26,.07);display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;max-width:420px;justify-self:center;width:100%">
+        <img src="{{ photos.nelly }}" alt="Dra. Nelly Galarza Chávez" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:6px solid #F51A0A;background:#F3E4DF;margin-bottom:10px">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:24px;line-height:1.1">Dra. Nelly Galarza Chávez</p>
+        <p style="color:#4A4B52;font-weight:700">Fundadora y presidenta</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FDF1EE;padding:72px 20px">
+    <div style="max-width:1200px;margin:0 auto">
+      <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Nuestra labor</p>
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.05;margin-bottom:28px">Lo que hacemos cada día</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px">
+        <div style="background:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:36px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:23px">Rescate</h3><p style="color:#4A4B52">Recogemos animales abandonados, maltratados o atropellados.</p></div>
+        <div style="background:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:36px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:23px">Campañas de salud gratuitas</h3><p style="color:#4A4B52">Esterilización, desparasitación y antipulgas en distritos vulnerables.</p></div>
+        <div style="background:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:36px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:23px">Cuidado diario</h3><p style="color:#4A4B52">Alimentación, limpieza y atención veterinaria en nuestros 3 albergues.</p></div>
+        <div style="background:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:8px"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:36px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:23px">Adopción responsable</h3><p style="color:#4A4B52">Buscamos familias comprometidas para cada rescatado.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:72px 20px">
+    <div style="max-width:1200px;margin:0 auto">
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.05;margin-bottom:28px">Nuestro día a día</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px">
+        <img src="{{ photos.g1 }}" alt="Campaña de esterilización" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+        <img src="{{ photos.g2 }}" alt="Voluntarios en el albergue" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+        <img src="{{ photos.g3 }}" alt="Perritos del albergue" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+        <img src="{{ photos.g4 }}" alt="Gatitos del albergue" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+        <img src="{{ photos.g5 }}" alt="Campaña de salud" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+        <img src="{{ photos.g6 }}" alt="Rescatados" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:#F3E4DF">
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ============ 3. CÓMO AYUDAR ============ -->
+<sc-if value="{{ isAyuda }}">
+<div data-screen-label="03 Cómo ayudar">
+  <section style="background:#15161A;color:#fff;padding:56px 20px 60px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:110px;right:6%;top:26px;opacity:.3;transform:rotate(18deg)">
+    <img src="frontend/icons/decorativo-footer.svg" alt="" style="position:absolute;width:100px;right:22%;bottom:16px;opacity:.3;transform:rotate(-12deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto">
+      <p style="color:#8EFF19;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Cómo ayudar</p>
+      <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:14px">4 formas de <span style="color:#8EFF19">sumar</span></h1>
+      <p style="font-size:19px;color:#D8D8DC;max-width:600px">Elige la que va contigo y escríbenos por WhatsApp. No necesitas experiencia: te enseñamos al llegar.</p>
+    </div>
+  </section>
+
+  <section style="padding:64px 20px 72px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px">
+      <article style="background:#fff;border-radius:28px;padding:26px;border:1px solid #F3E4DF;display:flex;flex-direction:column;gap:10px">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:#F51A0A">01</p>
+        <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Voluntariado en albergue</h3>
+        <p style="color:#4A4B52;flex:1">Limpieza, alimentación, baños y paseos. Lo que más necesitan es compañía.</p>
+        <p style="align-self:flex-start;background:#FDE8E4;color:#15161A;font-weight:700;font-size:14px;padding:4px 12px;border-radius:999px">Ideal para: todos</p>
+        <a href="{{ wa.albergue }}" target="_blank" rel="noopener" style="margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-weight:800;padding:12px 18px;border-radius:999px;min-height:48px" style-hover="color:#fff;background:#1EBE59"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:20px">Escribir por WhatsApp</a>
+      </article>
+      <article style="background:#fff;border-radius:28px;padding:26px;border:1px solid #F3E4DF;display:flex;flex-direction:column;gap:10px">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:#F51A0A">02</p>
+        <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Difusión digital</h3>
+        <p style="color:#4A4B52;flex:1">Fotos y videos de los rescatados para difundir en redes sociales y que más gente los conozca.</p>
+        <p style="align-self:flex-start;background:#FDE8E4;color:#15161A;font-weight:700;font-size:14px;padding:4px 12px;border-radius:999px">Ideal para: comunicación y diseño</p>
+        <a href="{{ wa.difusion }}" target="_blank" rel="noopener" style="margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-weight:800;padding:12px 18px;border-radius:999px;min-height:48px" style-hover="color:#fff;background:#1EBE59"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:20px">Escribir por WhatsApp</a>
+      </article>
+      <article style="background:#fff;border-radius:28px;padding:26px;border:1px solid #F3E4DF;display:flex;flex-direction:column;gap:10px">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:#F51A0A">03</p>
+        <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Donación en especie</h3>
+        <p style="color:#4A4B52;flex:1">Alimento, arena, medicinas, mantas o productos de limpieza. Todo se usa.</p>
+        <p style="align-self:flex-start;background:#FDE8E4;color:#15161A;font-weight:700;font-size:14px;padding:4px 12px;border-radius:999px">Ideal para: colectas y empresas</p>
+        <a href="{{ wa.especie }}" target="_blank" rel="noopener" style="margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-weight:800;padding:12px 18px;border-radius:999px;min-height:48px" style-hover="color:#fff;background:#1EBE59"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:20px">Escribir por WhatsApp</a>
+      </article>
+      <article style="background:#fff;border-radius:28px;padding:26px;border:1px solid #F3E4DF;display:flex;flex-direction:column;gap:10px">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:18px;color:#F51A0A">04</p>
+        <h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;line-height:1.1">Investigadores</h3>
+        <p style="color:#4A4B52;flex:1">Investigaciones para sanar a nuestros gatitos y mejorar su salud. Un aporte íntegro de la ciencia al albergue.</p>
+        <p style="align-self:flex-start;background:#FDE8E4;color:#15161A;font-weight:700;font-size:14px;padding:4px 12px;border-radius:999px">Ideal para: investigadores y tesistas</p>
+        <a href="{{ wa.investigacion }}" target="_blank" rel="noopener" style="margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-weight:800;padding:12px 18px;border-radius:999px;min-height:48px" style-hover="color:#fff;background:#1EBE59"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:20px">Escribir por WhatsApp</a>
+      </article>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ============ 4. INSTITUCIONES ============ -->
+<sc-if value="{{ isInstituciones }}">
+<div data-screen-label="04 Instituciones">
+  <section style="padding:56px 20px 64px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-hero-2.svg" alt="" style="position:absolute;width:130px;right:-20px;top:30px;opacity:.08;transform:rotate(25deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:44px;align-items:center">
+      <div>
+        <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Instituciones</p>
+        <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,5.6vw,64px);line-height:1;margin-bottom:18px;text-wrap:balance">Trae a tu grupo. <span style="color:#F51A0A">Vivan una mañana que no olvidarán.</span></h1>
+        <p style="font-size:19px;color:#3A3B42;margin-bottom:26px;max-width:540px">Recibimos a universidades, colegios y empresas para voluntariados grupales con propósito real.</p>
+        <a href="{{ wa.institucion }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#F51A0A;color:#fff;padding:16px 28px;border-radius:999px;font-weight:800;font-size:17px;box-shadow:0 5px 0 #A60F05;min-height:52px" style-hover="color:#fff"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:22px">Inscribir a mi institución</a>
+      </div>
+      <img src="{{ photos.g1 }}" alt="Grupo en campaña de salud" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:32px;background:#F3E4DF">
+    </div>
+  </section>
+
+  <section style="background:#FDF1EE;padding:64px 20px">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-bottom:44px">
+        <div style="background:#fff;border-radius:24px;padding:24px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:25px;margin-bottom:6px">Universidades</h3><p style="color:#4A4B52">Horas de voluntariado, responsabilidad social y prácticas para veterinaria y comunicación.</p></div>
+        <div style="background:#fff;border-radius:24px;padding:24px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:25px;margin-bottom:6px">Colegios</h3><p style="color:#4A4B52">Servicio social y salidas educativas sobre tenencia responsable y empatía animal.</p></div>
+        <div style="background:#fff;border-radius:24px;padding:24px"><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:25px;margin-bottom:6px">Empresas</h3><p style="color:#4A4B52">Voluntariado corporativo, colectas internas y apoyo a campañas de salud.</p></div>
+      </div>
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,40px);line-height:1.05;margin-bottom:18px">Lo que podemos hacer juntos</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span style="display:flex;align-items:center;gap:8px;background:#15161A;color:#fff;font-weight:700;padding:10px 18px;border-radius:999px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Visitas grupales</span>
+        <span style="display:flex;align-items:center;gap:8px;background:#15161A;color:#fff;font-weight:700;padding:10px 18px;border-radius:999px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Servicio social</span>
+        <span style="display:flex;align-items:center;gap:8px;background:#15161A;color:#fff;font-weight:700;padding:10px 18px;border-radius:999px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Apoyo en campañas</span>
+        <span style="display:flex;align-items:center;gap:8px;background:#15161A;color:#fff;font-weight:700;padding:10px 18px;border-radius:999px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Colectas</span>
+        <span style="display:flex;align-items:center;gap:8px;background:#15161A;color:#fff;font-weight:700;padding:10px 18px;border-radius:999px"><img src="frontend/icons/icono-badge.svg" alt="" style="width:16px">Difusión en redes</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#15161A;color:#fff;padding:64px 20px 72px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:90px;right:5%;top:30px;opacity:.25;transform:rotate(20deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto">
+      <p style="color:#8EFF19;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Paso a paso</p>
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.05;margin-bottom:30px">Así es una visita</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin-bottom:36px">
+        <div style="border:2px solid #34353B;border-radius:24px;padding:22px"><p style="width:44px;height:44px;border-radius:50%;background:#8EFF19;color:#15161A;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px;display:grid;place-items:center;margin-bottom:12px">1</p><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px">Escríbenos</h3><p style="color:#D8D8DC">Cuéntanos por WhatsApp quiénes son y cuántas personas vendrían.</p></div>
+        <div style="border:2px solid #34353B;border-radius:24px;padding:22px"><p style="width:44px;height:44px;border-radius:50%;background:#8EFF19;color:#15161A;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px;display:grid;place-items:center;margin-bottom:12px">2</p><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px">Coordinamos</h3><p style="color:#D8D8DC">Elegimos fecha, horario y actividad según su grupo.</p></div>
+        <div style="border:2px solid #34353B;border-radius:24px;padding:22px"><p style="width:44px;height:44px;border-radius:50%;background:#8EFF19;color:#15161A;font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px;display:grid;place-items:center;margin-bottom:12px">3</p><h3 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:22px">Visitan el albergue</h3><p style="color:#D8D8DC">Charla breve, trabajo en equipo y tiempo con los rescatados.</p></div>
+      </div>
+      <a href="{{ wa.institucion }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#8EFF19;color:#15161A;padding:16px 28px;border-radius:999px;font-weight:800;font-size:17px;min-height:52px" style-hover="color:#15161A;background:#A6FF4D">Inscribir a mi institución</a>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ============ 5. DONA ============ -->
+<sc-if value="{{ isDona }}">
+<div data-screen-label="05 Dona">
+  <section style="padding:48px 20px 24px">
+    <div style="max-width:1200px;margin:0 auto">
+      <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Dona</p>
+      <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:14px">Tu ayuda <span style="color:#F51A0A">¡suma!</span></h1>
+      <p style="font-size:19px;color:#3A3B42;max-width:620px">Cada sol se convierte en alimento, vacunas y esterilizaciones. Elige cómo donar.</p>
+    </div>
+  </section>
+
+  <section style="padding:24px 20px 56px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px">
+      <div style="background:#fff;border-radius:28px;padding:24px;border:1px solid #F3E4DF;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;color:#742284">Yape</p>
+        <div style="width:100%;max-width:220px;aspect-ratio:1;border-radius:18px;background:repeating-linear-gradient(45deg,#F6ECE9 0 10px,#FFFAF8 10px 20px);border:2px dashed #E3CFC9;display:grid;place-items:center;font-family:ui-monospace,monospace;font-size:13px;color:#6A6B72">QR Yape</div>
+        <p style="font-weight:800;font-size:20px">999 940 551</p>
+      </div>
+      <div style="background:#fff;border-radius:28px;padding:24px;border:1px solid #F3E4DF;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;color:#0C7C8A">Plin</p>
+        <div style="width:100%;max-width:220px;aspect-ratio:1;border-radius:18px;background:repeating-linear-gradient(45deg,#F6ECE9 0 10px,#FFFAF8 10px 20px);border:2px dashed #E3CFC9;display:grid;place-items:center;font-family:ui-monospace,monospace;font-size:13px;color:#6A6B72">QR Plin</div>
+        <p style="font-weight:800;font-size:20px">999 940 551</p>
+      </div>
+      <div style="background:#15161A;color:#fff;border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;grid-column:span 1">
+        <img src="frontend/icons/decorativo-footer.svg" alt="" style="position:absolute;width:90px;right:-16px;top:14px;opacity:.25;transform:rotate(-20deg)">
+        <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:26px;color:#8EFF19">Transferencia BCP</p>
+        <div>
+          <p style="font-size:14px;color:#BDBDC3;font-weight:700">Cuenta de ahorros</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap"><p style="font-weight:800;font-size:22px;letter-spacing:.02em">193-9895139-0-96</p><button sc-camel-on-click="{{ copyCuenta }}" style="background:transparent;border:2px solid #8EFF19;color:#8EFF19;font-family:inherit;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;cursor:pointer;min-height:36px">Copiar</button></div>
+        </div>
+        <div style="background:#F51A0A;border-radius:14px;padding:12px 14px">
+          <p style="font-size:14px;font-weight:700">CCI</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap"><p style="font-weight:800;font-size:17px;letter-spacing:.01em">002-193-009895139096-16</p><button sc-camel-on-click="{{ copyCci }}" style="background:#fff;border:0;color:#15161A;font-family:inherit;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;cursor:pointer;min-height:36px">Copiar</button></div>
+        </div>
+        <p style="font-size:15px;color:#D8D8DC">Titular: <strong style="color:#fff">Animales Siempre Libres de Maltrato</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FDF1EE;padding:64px 20px 72px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px;align-items:center">
+      <div>
+        <p style="color:#C41208;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Donación en especie</p>
+        <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.05;margin-bottom:22px">Lo que más necesitamos</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:26px">
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Alimento para perros</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Alimento para gatos</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Arena para gatos</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Medicinas y antipulgas</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Mantas y toallas</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Lejía y desinfectante</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Periódico</p>
+          <p style="display:flex;align-items:center;gap:10px;background:#fff;padding:12px 16px;border-radius:16px;font-weight:700"><img src="frontend/icons/decorativo-top.svg" alt="" style="width:20px">Platos, collares y correas</p>
+        </div>
+        <a href="{{ wa.especie }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;font-size:16px;min-height:52px" style-hover="color:#fff;background:#1EBE59"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:22px">Coordinar entrega</a>
+      </div>
+      <img src="fotos/campana-salud-salma.png" alt="Campaña de salud de SALMA — tu ayuda suma" style="width:100%;border-radius:28px;aspect-ratio:4/3;object-fit:cover;object-position:30% center">
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<!-- ============ 6. CONTACTO ============ -->
+<sc-if value="{{ isContacto }}">
+<div data-screen-label="06 Contacto">
+  <section style="background:#15161A;color:#fff;padding:56px 20px 60px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:100px;right:8%;top:22px;opacity:.3;transform:rotate(-14deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto">
+      <p style="color:#8EFF19;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">Contacto</p>
+      <h1 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:14px">¿Dudas? Te respondemos.</h1>
+      <p style="font-size:19px;color:#D8D8DC;max-width:600px">Todo lo que necesitas saber antes de tu primera visita.</p>
+    </div>
+  </section>
+
+  <section style="padding:64px 20px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,40px);line-height:1.05;margin-bottom:8px">Preguntas frecuentes</h2>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Necesito experiencia con animales?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">No. Te explicamos todo al llegar; solo necesitas ganas de ayudar.</p></details>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Hay edad mínima?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">Los menores de edad pueden participar acompañados de un adulto o como parte de una actividad de su colegio.</p></details>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Dónde está el albergue?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">En Surquillo, Lima. Te compartimos la ubicación exacta por WhatsApp al coordinar tu visita.</p></details>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Cuánto tiempo debo dedicar?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">Lo que puedas. Una visita de unas horas ya hace la diferencia.</p></details>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Qué debo llevar?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">Ropa y zapatillas cómodas que se puedan ensuciar, agua y, si quieres, alguna donación.</p></details>
+        <details style="background:#fff;border:1px solid #F3E4DF;border-radius:20px;padding:18px 22px"><summary style="display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:18px">¿Cuál es el horario?<span style="color:#F51A0A">+</span></summary><p style="margin-top:10px;color:#4A4B52">Lunes a viernes de 8 am a 6 pm y sábados de 8 am a 12:30 pm, previa coordinación.</p></details>
+      </div>
+      <div style="background:#F51A0A;color:#fff;border-radius:32px;padding:30px;display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden">
+        <img src="frontend/icons/decorativo-footer.svg" alt="" style="position:absolute;width:110px;right:-20px;bottom:20px;opacity:.3;transform:rotate(-24deg)">
+        <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:32px;line-height:1.05">Escríbenos</h2>
+        <div><p style="font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em">WhatsApp</p><p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:34px;line-height:1.1">999 940 551</p></div>
+        <div><p style="font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em">Correo</p><p style="font-weight:700;font-size:18px;word-break:break-word">nellygalarza@hotmail.com</p></div>
+        <div><p style="font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em">Horario</p><p style="font-weight:700;font-size:18px">Lun–Vie 8 am – 6 pm<br>Sáb 8 am – 12:30 pm</p></div>
+        <div><p style="font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.06em">Ubicación</p><p style="font-weight:700;font-size:18px">Surquillo, Lima</p></div>
+        <a href="{{ wa.general }}" target="_blank" rel="noopener" style="position:relative;display:flex;align-items:center;justify-content:center;gap:10px;background:#15161A;color:#fff;padding:16px 24px;border-radius:999px;font-weight:800;font-size:17px;min-height:52px" style-hover="color:#8EFF19"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:22px">Abrir WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</div>
+</sc-if>
+
+<sc-if value="{{ showCtaBand }}" hint-placeholder-val="{{ true }}">
+  <section style="background:#15161A;color:#fff;padding:52px 20px;position:relative;overflow:hidden">
+    <img src="frontend/icons/decorativo-footer.svg" alt="" style="position:absolute;width:120px;left:3%;bottom:-14px;opacity:.22;transform:rotate(18deg)">
+    <img src="frontend/icons/decorativo-hero-1.svg" alt="" style="position:absolute;width:70px;right:30%;top:10px;opacity:.22;transform:rotate(-10deg)">
+    <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px">
+      <h2 style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.05;max-width:640px">Una visita de unas horas <span style="color:#8EFF19">ya hace la diferencia.</span></h2>
+      <a href="{{ wa.general }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#8EFF19;color:#15161A;padding:16px 28px;border-radius:999px;font-weight:800;font-size:17px;min-height:52px" style-hover="color:#15161A;background:#A6FF4D">Quiero ser voluntario</a>
+    </div>
+  </section>
+</sc-if>
+</main>
+
+<footer style="background:#0E0F12;color:#D8D8DC;padding:56px 20px 28px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <img src="fotos/logo-salma.png" alt="Albergue Salma" style="width:64px;height:64px;border-radius:14px">
+      <p>Siempre Animales Libres de Maltrato y Abandono. Surquillo, Lima — desde hace más de 20 años.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;color:#fff">Contacto</p>
+      <a href="{{ wa.general }}" target="_blank" rel="noopener" style="color:#8EFF19;font-weight:800">WhatsApp 999 940 551</a>
+      <p style="word-break:break-word">nellygalarza@hotmail.com</p>
+      <p>Lun–Vie 8 am – 6 pm · Sáb 8 am – 12:30 pm</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <p style="font-family:'Baloo 2',sans-serif;font-weight:800;font-size:20px;color:#fff">Síguenos</p>
+      <a href="https://www.facebook.com/AlbergueSalmaPerrosyGatitos/?locale=es_LA" target="_blank" rel="noopener" style="color:#D8D8DC" style-hover="color:#8EFF19">Facebook</a>
+      <a href="https://www.instagram.com/salmaperu_/" target="_blank" rel="noopener" style="color:#D8D8DC" style-hover="color:#8EFF19">Instagram</a>
+      <a href="https://www.tiktok.com/@albergue.salma" target="_blank" rel="noopener" style="color:#D8D8DC" style-hover="color:#8EFF19">TikTok</a>
+    </div>
+  </div>
+  <p style="max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #26272C;font-size:14px;color:#9A9BA2">© {{ year }} Asociación Civil SALMA</p>
+</footer>
+
+<a href="{{ wa.general }}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position:fixed;right:18px;bottom:18px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.28)" style-hover="transform:scale(1.07)"><img src="frontend/icons/icono-entrega.svg" alt="" style="width:32px"></a>
+
+<sc-if value="{{ toast }}">
+  <div style="position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:70;background:#15161A;color:#8EFF19;font-weight:800;padding:12px 22px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.3)">{{ toast }}</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const WA = '51999940551';
+const MSG = {
+  general: 'Hola, vi la página de voluntariado del Albergue Salma y quiero ser voluntario/a. ¿Cómo puedo ayudar?',
+  albergue: 'Hola, quiero ser voluntario/a en el albergue (limpieza, alimentación, paseos). ¿Qué días puedo ir?',
+  campanas: 'Hola, quiero apoyar en las campañas de esterilización y salud. ¿Cuándo es la próxima?',
+  veterinaria: 'Hola, soy estudiante de veterinaria y me gustaría hacer prácticas/voluntariado en el albergue.',
+  difusion: 'Hola, quiero ayudar con la difusión en redes sociales del albergue (fotos y videos).',
+  investigacion: 'Hola, soy investigador/a y me gustaría colaborar con investigaciones para ayudar a sanar a los gatitos del albergue.',
+  hogar: 'Hola, me gustaría ser hogar temporal para un perrito o gatito del albergue.',
+  especie: 'Hola, quiero donar alimentos/artículos al albergue. ¿Qué necesitan y cómo los entrego?',
+  institucion: 'Hola, represento a una institución (universidad/colegio/empresa) y nos gustaría coordinar un voluntariado con el Albergue Salma.'
+};
+const CDN = 'https://c2c4f1f955.cbaul-cdnwnd.com/33a4f3c71c6456d099ebdffbbea31a80/';
+const PHOTOS = {
+  hero: CDN + '200000054-ea6acea6ae/IMG-20240511-WA0144.jpeg',
+  nelly: CDN + '200000117-c8b5fc8b61/drnelly-1.png',
+  g1: CDN + '200000055-5776b5776c/IMG-20240511-WA0139.jpeg',
+  g2: CDN + '200000067-e100ce100e/IMG-20240511-WA0143-9.jpeg',
+  g3: CDN + '200000109-329b9329bb/salamimagecampaign5.jpeg',
+  g4: CDN + '200000111-d6dffd6e01/salamimagecampaign8.jpeg',
+  g5: CDN + '200000137-30d6530d68/82060997_2829034407147728_8737514268200534016_n.jpeg',
+  g6: CDN + '200000105-5cdb35cdb5/IMAGEN%20%2825%29.jpeg'
+};
+const PAGES = [['inicio','Inicio'],['conocenos','Conócenos'],['ayuda','Cómo ayudar'],['instituciones','Instituciones'],['dona','Dona'],['contacto','Contacto']];
+const KEY = 'salma-page';
+
+class Component extends DCLogic {
+  state = { page: this.readPage(), w: typeof window !== 'undefined' ? window.innerWidth : 1200, menu: false, toast: '' };
+  readPage() {
+    const h = (location.hash || '').slice(1);
+    if (PAGES.some(p => p[0] === h)) return h;
+    try { return localStorage.getItem(KEY) || 'inicio'; } catch (e) { return 'inicio'; }
+  }
+  componentDidMount() {
+    this.onHash = () => {
+      const h = location.hash.slice(1);
+      if (!PAGES.some(p => p[0] === h)) return;
+      this.setState({ page: h, menu: false });
+      try { localStorage.setItem(KEY, h); } catch (e) {}
+      window.scrollTo(0, 0);
+    };
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('hashchange', this.onHash);
+    window.addEventListener('resize', this.onResize);
+    const ph = img => {
+      if (img.dataset.ph) return; img.dataset.ph = '1';
+      const label = (img.alt || 'foto').replace(/[<&>"]/g, '');
+      const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><defs><pattern id="p" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="20" fill="#F6ECE9"/><rect x="10" width="10" height="20" fill="#FFFAF8"/></pattern></defs><rect width="400" height="300" fill="url(#p)"/><text x="200" y="155" text-anchor="middle" font-family="monospace" font-size="15" fill="#6A6B72">foto: ' + label + '</text></svg>';
+      img.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+    };
+    this.onImgErr = e => { if (e.target && e.target.tagName === 'IMG') ph(e.target); };
+    document.addEventListener('error', this.onImgErr, true);
+    this.scanImgs = () => document.querySelectorAll('img').forEach(i => { if (i.complete && i.naturalWidth === 0 && i.getAttribute('src')) ph(i); });
+    this.scanImgs();
+  }
+  componentDidUpdate() { this.scanImgs && setTimeout(this.scanImgs, 50); }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this.onHash);
+    window.removeEventListener('resize', this.onResize);
+    document.removeEventListener('error', this.onImgErr, true);
+  }
+  copy(text, label) {
+    const done = () => { this.setState({ toast: label }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ toast: '' }), 2000); };
+    try { navigator.clipboard.writeText(text).then(done, done); } catch (e) { done(); }
+  }
+  renderVals() {
+    const { page, w, menu, toast } = this.state;
+    const desktop = w >= 1100;
+    const wa = {};
+    Object.keys(MSG).forEach(k => wa[k] = `https://wa.me/${WA}?text=${encodeURIComponent(MSG[k])}`);
+    return {
+      wa, photos: PHOTOS, toast, year: new Date().getFullYear(),
+      nav: PAGES.map(([id, label]) => ({ href: '#' + id, label, active: id === page, inactive: id !== page })),
+      isDesktop: desktop, isMobile: !desktop, showMobileMenu: !desktop && menu, menuIcon: menu ? '✕' : '☰',
+      toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      isInicio: page === 'inicio', isConocenos: page === 'conocenos', isAyuda: page === 'ayuda',
+      isInstituciones: page === 'instituciones', isDona: page === 'dona', isContacto: page === 'contacto',
+      showCtaBand: page === 'inicio' || page === 'conocenos' || page === 'ayuda',
+      copyCuenta: () => this.copy('19398951390096', 'Cuenta copiada ✔'),
+      copyCci: () => this.copy('00219300989513909616', 'CCI copiado ✔')
+    };
+  }
+}
+</script>
+
+
+</body></html>
