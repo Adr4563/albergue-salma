@@ -19,10 +19,7 @@ Proyecto desarrollado por estudiantes del curso Gestión de Proyectos (Universid
 3. [Estructura de archivos](#3-estructura-de-archivos)
 4. [Ver la web en tu computadora](#4-ver-la-web-en-tu-computadora)
 5. [Cómo actualizar la web (sin programar)](#5-cómo-actualizar-la-web-sin-programar)
-6. [Revisión mensual (5 minutos)](#6-revisión-mensual-5-minutos)
-7. [Continuidad del proyecto](#7-continuidad-del-proyecto)
-8. [Responsables](#8-responsables)
-9. [Historial](#9-historial)
+6. [Continuidad del proyecto](#6-continuidad-del-proyecto)
 
 ---
 
@@ -92,14 +89,7 @@ Todo se hace desde el navegador, en GitHub:
 
 **Si algo sale mal:** abre **Commits**, entra al último cambio y usa **Revert** para volver a la versión anterior.
 
-## 6. Revisión mensual (5 minutos)
-
-- [ ] Los botones de WhatsApp abren el chat del albergue.
-- [ ] Los QR y la cuenta BCP son los oficiales del albergue.
-- [ ] Las fotos cargan bien (sin recuadros vacíos).
-- [ ] En **Commits** no hay cambios que nadie del equipo haya hecho.
-
-## 7. Continuidad del proyecto
+## 6. Continuidad del proyecto
 
 Cuando el equipo de estudiantes termine el curso, la web debe quedar en manos del albergue:
 
@@ -108,17 +98,3 @@ Cuando el equipo de estudiantes termine el curso, la web debe quedar en manos de
 3. **Fotos propias:** algunas fotos todavía se cargan desde la web antigua del albergue (Webnode). Conviene subirlas a `fotos/` para que no dependan de ese sitio.
 4. **Dependencias externas:** la web carga React desde `unpkg.com`. Si algún día la página se ve en blanco, revisar que ese servicio funcione.
 5. **Difusión:** mantener el enlace de la web en la biografía de TikTok (@albergue.salma), Facebook e Instagram.
-
-## 8. Responsables
-
-| Rol | Persona |
-|---|---|
-| Desarrollo de la web | Adrian Flores Uzategui (Universidad de Lima) |
-| Validación y contenido | Dra. Nelly Galarza Chávez (Asociación Civil SALMA) |
-
-## 9. Historial
-
-| Fecha | Cambio |
-|---|---|
-| 10/10/2026 | Publicación de la web en GitHub Pages |
-| 10/10/2026 | Reorganización del README: índice, sección de tecnologías y guía para verla en local |
